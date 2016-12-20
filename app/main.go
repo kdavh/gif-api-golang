@@ -40,7 +40,7 @@ func (c *gifController) Index() {
 		for i := 0; i < 5; i++ {
 			respStruct.Data[i] = gif{
 				GifId: apiResp.Data[i].Id,
-				Url:   apiResp.Data[i].Url,
+				Url:   apiResp.Data[i].EmbedUrl,
 			}
 		}
 	}
@@ -50,8 +50,8 @@ func (c *gifController) Index() {
 }
 
 type apiGif struct {
-	Id  string `json:"id"`
-	Url string `json:"url"`
+	Id       string `json:"id"`
+	EmbedUrl string `json:"embed_url"`
 }
 
 type apiGifs struct {
