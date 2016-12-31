@@ -23,6 +23,7 @@ test:
 sh:
 	docker run --name ${NAME}-container-sh \
 		--rm \
+		-p ${HOST_PORT}:${PORT} \
 		-it \
 		-v `pwd`/${APP_DIR}:/go/src/GiphyApi \
 		-w /go/src/GiphyApi \
